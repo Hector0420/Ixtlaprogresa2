@@ -35,7 +35,7 @@
 
         // Si ya está logueado, redirigir al admin (si es admin) o a index
         (async () => {
-            const { data: { user } } = await supabase.auth.getUser();
+            const { data: { user } } = await supabase.auth.getCurrentUser();
             if (user) {
                 // Verificar si es admin
                 const { data: profile } = await supabase
